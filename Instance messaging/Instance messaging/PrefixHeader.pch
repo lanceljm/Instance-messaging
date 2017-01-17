@@ -17,6 +17,10 @@
 typedef void(^ButtonClick)();
 typedef void(^ButtonClickWithSender)(id sender);
 
+
+#define AppKey @"uwd1c0sxuwt71"
+#define Token @"PC/sBMu87VadVYk5kxIR1JilVM5YkeEAd+a39plw3mKH9R86Ci/Q8KX/cywF59NLHraBY9RG8LGP8KDaiKSEjw=="
+
 #pragma 颜色
 
 #define RANDOMCOLOR [UIColor colorWithHue:arc4random()%256/255.0 saturation:arc4random()%256/255.0 brightness:arc4random()%256/255.0 alpha:1]

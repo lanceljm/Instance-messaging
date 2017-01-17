@@ -34,7 +34,7 @@
     [self addChildVcWithTitle:@"聊天" withClassName:@"TalkViewController" withNormalImageName:@"icon_room" withSelectedImageName:@"icon_room_hover"];
     
     //好友
-    [self addChildVcWithTitle:@"好友" withClassName:@"FriendsViewController" withNormalImageName:@"chat_room_inactive" withSelectedImageName:@"chat_room"];
+    [self addChildVcWithTitle:@"群聊" withClassName:@"FriendsViewController" withNormalImageName:@"chat_room_inactive" withSelectedImageName:@"chat_room"];
     
     //我
     [self addChildVcWithTitle:@"我" withClassName:@"MineViewController" withNormalImageName:@"icon_me" withSelectedImageName:@"icon_me_hover"];
