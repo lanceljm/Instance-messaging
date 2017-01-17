@@ -23,6 +23,7 @@
 		1A264D3F1E2DAB3A00F28F4A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D3E1E2DAB3A00F28F4A /* FriendsViewController.m */; };
 		1A264D421E2DAB4F00F28F4A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D411E2DAB4F00F28F4A /* MineViewController.m */; };
 		B4ED97E776C823EE9C3AFF58 /* libPods-Instance messaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */; };
+		CF5FA4C41E2DBE72001E11F2 /* ChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5FA4C31E2DBE72001E11F2 /* ChatVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		6B50F9000574B9CA6829363E /* Pods-Instance messaging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.debug.xcconfig"; sourceTree = "<group>"; };
 		708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Instance messaging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69B0FB6968D7FD0527C2A78 /* Pods-Instance messaging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.release.xcconfig"; sourceTree = "<group>"; };
+		CF5FA4C21E2DBE72001E11F2 /* ChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatVC.h; sourceTree = "<group>"; };
+		CF5FA4C31E2DBE72001E11F2 /* ChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 				1A264D3E1E2DAB3A00F28F4A /* FriendsViewController.m */,
 				1A264D401E2DAB4F00F28F4A /* MineViewController.h */,
 				1A264D411E2DAB4F00F28F4A /* MineViewController.m */,
+				CF5FA4C21E2DBE72001E11F2 /* ChatVC.h */,
+				CF5FA4C31E2DBE72001E11F2 /* ChatVC.m */,
 			);
 			name = "功能";
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				1A264D121E2DA58900F28F4A /* AppDelegate.m in Sources */,
 				1A264D0F1E2DA58900F28F4A /* main.m in Sources */,
 				1A264D3F1E2DAB3A00F28F4A /* FriendsViewController.m in Sources */,
+				CF5FA4C41E2DBE72001E11F2 /* ChatVC.m in Sources */,
 				1A264D371E2DA80C00F28F4A /* RootViewController.m in Sources */,
 				1A264D2A1E2DA74C00F28F4A /* LoginViewController.m in Sources */,
 				1A264D2D1E2DA77F00F28F4A /* ForgetPDViewController.m in Sources */,
@@ -467,6 +473,7 @@
 				1A264D231E2DA58900F28F4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

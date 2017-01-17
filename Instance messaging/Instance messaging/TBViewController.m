@@ -32,6 +32,7 @@
 -(void)addChildVCs {
     //聊天列表
     [self addChildVcWithTitle:@"聊天" withClassName:@"TalkViewController" withNormalImageName:@"icon_room" withSelectedImageName:@"icon_room_hover"];
+    
     //好友
     [self addChildVcWithTitle:@"好友" withClassName:@"FriendsViewController" withNormalImageName:@"chat_room_inactive" withSelectedImageName:@"chat_room"];
     
