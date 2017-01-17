@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import <RongIMKit/RongIMKit.h>
+#import <RongIMLib/RongIMLib.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<RCIMUserInfoDataSource>
 
 @end
 
@@ -19,13 +21,51 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[RootViewController alloc] init];
-    [self.window makeKeyAndVisible];
+    
+    [[RCIM sharedRCIM] initWithAppKey:@"uwd1c0sxuwt71"];
+    
+    __weak typeof(self)weakSelf = self;
+    [[RCIM sharedRCIM] connectWithToken:@"Em9O52mueJqwxdXA3uAOEZdnIK3mVzC7EdowJZpZwuhzA8KnN/L1jcEOiZ5UhEUaav5uaj+syJPrufgLI0dtIXhydaPKlKJU"     success:^(NSString *userId) {
+        NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            weakSelf.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+            weakSelf.window.rootViewController = [[RootViewController alloc] init];
+            [weakSelf.window makeKeyAndVisible];
+
+        });
+
+       
+        
+        [[RCIM sharedRCIM] setUserInfoDataSource:self];
+        
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登陆的错误码为:%ld", (long)status);
+    } tokenIncorrect:^{
+        //token过期或者不正确。
+        //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+        //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+        NSLog(@"token错误");
+    }];
+
     
     return YES;
 }
 
+- (void)getUserInfoWithUserId:(NSString *)userId
+                   completion:(void (^)(RCUserInfo *userInfo))completion{
+    
+    if ([userId isEqualToString:@"test2"]) {
+        RCUserInfo *user = [[RCUserInfo alloc] init];
+        user.userId = userId;
+        user.name = @"测试2";
+        return completion(user);
+    }
+    
+    return completion(nil);
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
