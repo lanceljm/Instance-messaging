@@ -1,15 +1,35 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - MBProgressHUD (1.0.0)
   - RongCloudIM/IMKit (2.8.4):
     - RongCloudIM/IMLib
   - RongCloudIM/IMLib (2.8.4)
 
 DEPENDENCIES:
+  - AFNetworking
+  - MBProgressHUD
   - RongCloudIM/IMKit
   - RongCloudIM/IMLib
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   RongCloudIM: 8b110800cf0c3a0b32e971fc62e9f214882d5927
 
-PODFILE CHECKSUM: 3f66c619baf2044d22019809e6ce94b6b2e0ce5c
+PODFILE CHECKSUM: 04599a6fad3687d8816bdee01341bc43e2d57a3d
 
 COCOAPODS: 1.1.1

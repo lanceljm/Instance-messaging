@@ -27,6 +27,7 @@
     
 //    self.view.backgroundColor = [UIColor redColor];
     
+    
     [self setControllers];
     [self registNotifications];
     

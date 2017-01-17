@@ -22,6 +22,10 @@
 		1A264D3C1E2DAACD00F28F4A /* TalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D3B1E2DAACD00F28F4A /* TalkViewController.m */; };
 		1A264D3F1E2DAB3A00F28F4A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D3E1E2DAB3A00F28F4A /* FriendsViewController.m */; };
 		1A264D421E2DAB4F00F28F4A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D411E2DAB4F00F28F4A /* MineViewController.m */; };
+		1A264D471E2DB97600F28F4A /* IconUnderLineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D461E2DB97600F28F4A /* IconUnderLineTextField.m */; };
+		1A264D4A1E2DB99200F28F4A /* SysButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D491E2DB99200F28F4A /* SysButton.m */; };
+		1A264D4D1E2DB9C900F28F4A /* IconTextDirectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D4C1E2DB9C900F28F4A /* IconTextDirectionButton.m */; };
+		1A264D541E2DC72200F28F4A /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D531E2DC72200F28F4A /* NetRequest.m */; };
 		B4ED97E776C823EE9C3AFF58 /* libPods-Instance messaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,16 @@
 		1A264D3E1E2DAB3A00F28F4A /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		1A264D401E2DAB4F00F28F4A /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1A264D411E2DAB4F00F28F4A /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		1A264D451E2DB97600F28F4A /* IconUnderLineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconUnderLineTextField.h; sourceTree = "<group>"; };
+		1A264D461E2DB97600F28F4A /* IconUnderLineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconUnderLineTextField.m; sourceTree = "<group>"; };
+		1A264D481E2DB99200F28F4A /* SysButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysButton.h; sourceTree = "<group>"; };
+		1A264D491E2DB99200F28F4A /* SysButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysButton.m; sourceTree = "<group>"; };
+		1A264D4B1E2DB9C900F28F4A /* IconTextDirectionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconTextDirectionButton.h; sourceTree = "<group>"; };
+		1A264D4C1E2DB9C900F28F4A /* IconTextDirectionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconTextDirectionButton.m; sourceTree = "<group>"; };
+		1A264D4E1E2DBA5E00F28F4A /* Adaption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adaption.h; sourceTree = "<group>"; };
+		1A264D501E2DBAC300F28F4A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1A264D521E2DC72200F28F4A /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
+		1A264D531E2DC72200F28F4A /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
 		6B50F9000574B9CA6829363E /* Pods-Instance messaging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.debug.xcconfig"; sourceTree = "<group>"; };
 		708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Instance messaging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69B0FB6968D7FD0527C2A78 /* Pods-Instance messaging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,16 +106,10 @@
 		1A264D0C1E2DA58900F28F4A /* Instance messaging */ = {
 			isa = PBXGroup;
 			children = (
+				1A264D511E2DC70500F28F4A /* 网络 */,
+				1A264D431E2DB77800F28F4A /* 系统 */,
 				1A264D391E2DAAAE00F28F4A /* 功能 */,
 				1A264D241E2DA59C00F28F4A /* 框架 */,
-				1A264D101E2DA58900F28F4A /* AppDelegate.h */,
-				1A264D111E2DA58900F28F4A /* AppDelegate.m */,
-				1A264D131E2DA58900F28F4A /* ViewController.h */,
-				1A264D141E2DA58900F28F4A /* ViewController.m */,
-				1A264D161E2DA58900F28F4A /* Main.storyboard */,
-				1A264D191E2DA58900F28F4A /* Assets.xcassets */,
-				1A264D1B1E2DA58900F28F4A /* LaunchScreen.storyboard */,
-				1A264D1E1E2DA58900F28F4A /* Info.plist */,
 				1A264D0D1E2DA58900F28F4A /* Supporting Files */,
 			);
 			path = "Instance messaging";
@@ -118,6 +126,8 @@
 		1A264D241E2DA59C00F28F4A /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
+				1A264D4F1E2DBAA400F28F4A /* 自定义 */,
+				1A264D441E2DB79700F28F4A /* 公用 */,
 				1A264D381E2DAA4200F28F4A /* 密码 */,
 				1A264D251E2DA5DB00F28F4A /* BaseViewController.h */,
 				1A264D261E2DA5DB00F28F4A /* BaseViewController.m */,
@@ -153,6 +163,52 @@
 				1A264D411E2DAB4F00F28F4A /* MineViewController.m */,
 			);
 			name = "功能";
+			sourceTree = "<group>";
+		};
+		1A264D431E2DB77800F28F4A /* 系统 */ = {
+			isa = PBXGroup;
+			children = (
+				1A264D101E2DA58900F28F4A /* AppDelegate.h */,
+				1A264D111E2DA58900F28F4A /* AppDelegate.m */,
+				1A264D131E2DA58900F28F4A /* ViewController.h */,
+				1A264D141E2DA58900F28F4A /* ViewController.m */,
+				1A264D161E2DA58900F28F4A /* Main.storyboard */,
+				1A264D191E2DA58900F28F4A /* Assets.xcassets */,
+				1A264D1B1E2DA58900F28F4A /* LaunchScreen.storyboard */,
+				1A264D1E1E2DA58900F28F4A /* Info.plist */,
+			);
+			name = "系统";
+			sourceTree = "<group>";
+		};
+		1A264D441E2DB79700F28F4A /* 公用 */ = {
+			isa = PBXGroup;
+			children = (
+				1A264D4E1E2DBA5E00F28F4A /* Adaption.h */,
+				1A264D501E2DBAC300F28F4A /* PrefixHeader.pch */,
+			);
+			name = "公用";
+			sourceTree = "<group>";
+		};
+		1A264D4F1E2DBAA400F28F4A /* 自定义 */ = {
+			isa = PBXGroup;
+			children = (
+				1A264D451E2DB97600F28F4A /* IconUnderLineTextField.h */,
+				1A264D461E2DB97600F28F4A /* IconUnderLineTextField.m */,
+				1A264D481E2DB99200F28F4A /* SysButton.h */,
+				1A264D491E2DB99200F28F4A /* SysButton.m */,
+				1A264D4B1E2DB9C900F28F4A /* IconTextDirectionButton.h */,
+				1A264D4C1E2DB9C900F28F4A /* IconTextDirectionButton.m */,
+			);
+			name = "自定义";
+			sourceTree = "<group>";
+		};
+		1A264D511E2DC70500F28F4A /* 网络 */ = {
+			isa = PBXGroup;
+			children = (
+				1A264D521E2DC72200F28F4A /* NetRequest.h */,
+				1A264D531E2DC72200F28F4A /* NetRequest.m */,
+			);
+			name = "网络";
 			sourceTree = "<group>";
 		};
 		2E0960EC11248B05F4052876 /* Frameworks */ = {
@@ -299,12 +355,16 @@
 				1A264D271E2DA5DB00F28F4A /* BaseViewController.m in Sources */,
 				1A264D3C1E2DAACD00F28F4A /* TalkViewController.m in Sources */,
 				1A264D421E2DAB4F00F28F4A /* MineViewController.m in Sources */,
+				1A264D471E2DB97600F28F4A /* IconUnderLineTextField.m in Sources */,
+				1A264D4D1E2DB9C900F28F4A /* IconTextDirectionButton.m in Sources */,
 				1A264D331E2DA7D800F28F4A /* TBViewController.m in Sources */,
+				1A264D541E2DC72200F28F4A /* NetRequest.m in Sources */,
 				1A264D121E2DA58900F28F4A /* AppDelegate.m in Sources */,
 				1A264D0F1E2DA58900F28F4A /* main.m in Sources */,
 				1A264D3F1E2DAB3A00F28F4A /* FriendsViewController.m in Sources */,
 				1A264D371E2DA80C00F28F4A /* RootViewController.m in Sources */,
 				1A264D2A1E2DA74C00F28F4A /* LoginViewController.m in Sources */,
+				1A264D4A1E2DB99200F28F4A /* SysButton.m in Sources */,
 				1A264D2D1E2DA77F00F28F4A /* ForgetPDViewController.m in Sources */,
 				1A264D301E2DA79100F28F4A /* NewUserViewController.m in Sources */,
 			);
@@ -428,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2PC8J9MPF4;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Instance messaging/PrefixHeader.pch";
 				INFOPLIST_FILE = "Instance messaging/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ljm.Instance-messaging";
@@ -441,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2PC8J9MPF4;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Instance messaging/PrefixHeader.pch";
 				INFOPLIST_FILE = "Instance messaging/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ljm.Instance-messaging";
@@ -467,6 +529,7 @@
 				1A264D231E2DA58900F28F4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

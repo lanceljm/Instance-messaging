@@ -8,5 +8,6 @@ target 'Instance messaging' do
   # Pods for Instance messaging
     pod 'RongCloudIM/IMLib'
     pod 'RongCloudIM/IMKit'
-
+    pod 'MBProgressHUD'
+    pod ‘AFNetworking’
 end

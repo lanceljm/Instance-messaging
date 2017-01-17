@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  Instance messaging
+//
+//  Created by ljm on 2017/1/17.
+//  Copyright © 2017年 ljm. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Adaption.h"
+#import "NetRequest.h"
+
+
+#pragma 定义公用的 block 类型
+typedef void(^ButtonClick)();
+typedef void(^ButtonClickWithSender)(id sender);
+
+#pragma 颜色
+
+#define RANDOMCOLOR [UIColor colorWithHue:arc4random()%256/255.0 saturation:arc4random()%256/255.0 brightness:arc4random()%256/255.0 alpha:1]
+
+// ***************** 主题色 **********************
+#define MainThemeColor [UIColor colorWithRed:0x22 / 255.0 green:0x69 / 255.0 blue:0xd5 / 255.0 alpha:1]
+// ***************** 主背景色 **********************
+#define MainBgColor [UIColor colorWithRed:236 / 255.0 green:240 / 255.0 blue:241 / 255.0 alpha:1]
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
