@@ -41,7 +41,7 @@
     //1.TabBarControllers
     [self showTabBarVcs];
     //2.LoginViewController
-    [self showLoginViewController];
+    //[self showLoginViewController];
     
 }
 

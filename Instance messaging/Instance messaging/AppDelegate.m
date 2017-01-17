@@ -49,12 +49,97 @@
         NSLog(@"token错误");
     }];
 
+    /**
+     * 推送处理1
+     */
+    if ([application
+         respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        //注册推送, iOS 8
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings
+                                                settingsForTypes:(UIUserNotificationTypeBadge |
+                                                                  UIUserNotificationTypeSound |
+                                                                  UIUserNotificationTypeAlert)
+                                                categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
     
+//        UIFont *font = [UIFont systemFontOfSize:19.f];
+//    NSDictionary *textAttributes = @{
+//                                     NSFontAttributeName : font,
+//                                     NSForegroundColorAttributeName : [UIColor whiteColor]
+//                                     };
+//    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance]
+//     setBarTintColor:[UIColor colorWithRed:(1 / 255.0f) green:(149 / 255.0f) blue:(255 / 255.0f) alpha:1]];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didReceiveMessageNotification:)
+     name:RCKitDispatchMessageNotification
+     object:nil];
+
     return YES;
+}
+/**
+ *  将得到的devicetoken 传给融云用于离线状态接收push ，您的app后台要上传推送证书
+ *
+ *  @param application <#application description#>
+ *  @param deviceToken <#deviceToken description#>
+ */
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+
+
+/**
+ *  网络状态变化。
+ *
+ *  @param status 网络状态。
+ */
+- (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
+    if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"提示"
+                              message:@"您"
+                              @"的帐号在别的设备上登录，您被迫下线！"
+                              delegate:nil
+                              cancelButtonTitle:@"知道了"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+       
+    }
+}
+- (void)didReceiveMessageNotification:(NSNotification *)notification {
+    [UIApplication sharedApplication].applicationIconBadgeNumber =
+    [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
 }
 
 - (void)getUserInfoWithUserId:(NSString *)userId
                    completion:(void (^)(RCUserInfo *userInfo))completion{
+    
+   if([userId isEqualToString:[RCIM sharedRCIM].currentUserInfo.userId]) {//自己
+       
+       RCUserInfo *aUser = [[RCUserInfo alloc]init];
+       aUser.userId = userId;
+       aUser.name = @"huahuacai?";
+       return completion(aUser);
+   }
+    
     
     if ([userId isEqualToString:@"test2"]) {
         RCUserInfo *user = [[RCUserInfo alloc] init];
@@ -62,7 +147,12 @@
         user.name = @"测试2";
         return completion(user);
     }
-    
+    if ([userId isEqualToString:@"ljm"]) {
+        RCUserInfo *user = [[RCUserInfo alloc] init];
+        user.userId = userId;
+        user.name = @"罗佳明";
+        return completion(user);
+    }
     return completion(nil);
     
 }
