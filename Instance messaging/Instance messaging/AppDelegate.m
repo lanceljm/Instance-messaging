@@ -134,7 +134,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
 }
 
-<<<<<<< HEAD
 - (void)getUserInfoWithUserId:(NSString *)userId
                    completion:(void (^)(RCUserInfo *userInfo))completion{
     
@@ -162,7 +161,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     return completion(nil);
     
 }
-=======
 //- (void)getUserInfoWithUserId:(NSString *)userId
 //                   completion:(void (^)(RCUserInfo *userInfo))completion{
 //    
@@ -176,7 +174,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 //    return completion(nil);
 //    
 //}
->>>>>>> a97ff3dcd83114dd1170e869c21ad1d27f5eb410
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
