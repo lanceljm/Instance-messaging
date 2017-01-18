@@ -1,5 +1,5 @@
 //
-//  FriendsViewController.h
+//  WeChatVC.h
 //  Instance messaging
 //
 //  Created by ljm on 2017/1/17.
@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <RongIMKit/RongIMKit.h>
 
-
-@interface FriendsViewController :RCConversationListViewController
-
-@property (nonatomic, retain)NSString *discussionId;
+@interface WeChatVC:RCConversationViewController
 
 @end

@@ -11,8 +11,9 @@
 #import "IconUnderLineTextField.h"
 #import <MBProgressHUD.h>//弹框
 #import <RongIMKit/RongIMKit.h>//融云
+#import <RongIMLib/RongIMLib.h>
 
-@interface LoginViewController ()
+@interface LoginViewController ()<RCIMUserInfoDataSource>
 
 @property(nonatomic,strong)SysButton *loginBtn;
 @property(nonatomic,strong)IconUnderLineTextField *accountTF;
@@ -48,13 +49,30 @@
 }
 
 #pragma mark -- 懒加载
-
 -(UIImageView *)logoImageView{
     if (!_logoImageView) {
         _logoImageView = [[UIImageView alloc] initWithFrame:AAdaptionRect((750-279)*0.5, 126, 279, 307)];
         [_logoImageView setImage:[UIImage imageNamed:@"login_logo"]];
     }
     return _logoImageView;
+}
+
+
+-(IconUnderLineTextField *)accountTF {
+    if (!_accountTF) {
+        _accountTF = [[IconUnderLineTextField alloc] initWithFrame:AAdaptionRect(182, CGRectGetMaxY(self.logoImageView.frame)/AAdaptionWidth() + 88, 454, 62) withIconName:@"手机" withPlaceholder:@"请输入帐号"];
+        _accountTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"saveAccount"];
+    }
+    return _accountTF;
+}
+
+-(IconUnderLineTextField *)passwordTF {
+    if (!_passwordTF) {
+        _passwordTF = [[IconUnderLineTextField alloc] initWithFrame:AAdaptionRect(182, 660, 454, 62) withIconName:@"密码" withPlaceholder:@"请输入密码"];
+        _passwordTF.secureTextEntry = YES;
+        _passwordTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"savePassword"];
+    }
+    return _passwordTF;
 }
 
 -(SysButton *)loginBtn {
@@ -78,47 +96,61 @@
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     hud.hidden = YES;
                 });
-            }else{
+            }else {
+                //初始化融云API接口
+                [[RCIM sharedRCIM] initWithAppKey:AppKey];
                 
-//                [[RCIM sharedRCIM] initWithAppKey:@"m7ua80gbm734m"];
-                NSString *url = @"http://api.cn.ronghub.com/user/getToken.json";
-                NSDictionary *parm = @{@"userId":_accountTF.text,@"name":@"",@"portraitUri":@""};
-                
-                [NetRequest POST:url parameters: parm success:^(id responseObject) {
-                    NSLog(@"成功：%@",responseObject);
+                [[RCIM sharedRCIM] connectWithToken:Token success:^(NSString *userId) {
+                    NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
                     
-                    [[NSUserDefaults standardUserDefaults] setValue:_accountTF.text forKey:@"saveAccount"];
-                    [[NSUserDefaults standardUserDefaults] setValue:_passwordTF.text forKey:@"savePassword"];
-                    [weakself.view removeFromSuperview];
-                    [weakself removeFromParentViewController];
+//                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//                    hud.mode = MBProgressHUDModeAnnularDeterminate;
+//                    hud.label.text = @"登录成功";
+//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+////                        hud.hidden = YES;
+//                        
+//                        [weakself.view removeFromSuperview];
+//                        [weakself removeFromParentViewController];
+//                        
+//                    });
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [weakself.view removeFromSuperview];
+                        [weakself removeFromParentViewController];
+                        
+                    });
                     
-                } failture:^(NSError *error) {
-                    NSLog(@"失败：-----------------%@",error);
+                    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+                    
+                } error:^(RCConnectErrorCode status) {
+                    NSLog(@"登陆的错误码为:%ld", (long)status);
+                } tokenIncorrect:^{
+                    //token过期或者不正确。
+                    //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                    //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                    NSLog(@"token错误");
                 }];
-                
-
+             
             }
-            
         }];
     }
+
     return _loginBtn;
 }
 
--(IconUnderLineTextField *)accountTF {
-    if (!_accountTF) {
-         _accountTF = [[IconUnderLineTextField alloc] initWithFrame:AAdaptionRect(182, CGRectGetMaxY(self.logoImageView.frame)/AAdaptionWidth() + 88, 454, 62) withIconName:@"手机" withPlaceholder:@"请输入帐号"];
-        _accountTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"saveAccount"];
+
+- (void)getUserInfoWithUserId:(NSString *)userId
+                   completion:(void (^)(RCUserInfo *userInfo))completion{
+    
+    if ([userId isEqualToString:@"test2"]) {
+        RCUserInfo *user = [[RCUserInfo alloc] init];
+        user.userId = userId;
+        user.name = @"测试2";
+        return completion(user);
     }
-    return _accountTF;
+    
+    return completion(nil);
+    
 }
 
--(IconUnderLineTextField *)passwordTF {
-    if (!_passwordTF) {
-        _passwordTF = [[IconUnderLineTextField alloc] initWithFrame:AAdaptionRect(182, 660, 454, 62) withIconName:@"密码" withPlaceholder:@"请输入密码"];
-        _passwordTF.secureTextEntry = YES;
-        _passwordTF.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"savePassword"];
-    }
-    return _passwordTF;
-}
 
 @end

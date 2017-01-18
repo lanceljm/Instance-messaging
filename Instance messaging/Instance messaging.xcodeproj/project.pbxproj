@@ -26,6 +26,7 @@
 		1A264D4A1E2DB99200F28F4A /* SysButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D491E2DB99200F28F4A /* SysButton.m */; };
 		1A264D4D1E2DB9C900F28F4A /* IconTextDirectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D4C1E2DB9C900F28F4A /* IconTextDirectionButton.m */; };
 		1A264D541E2DC72200F28F4A /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D531E2DC72200F28F4A /* NetRequest.m */; };
+		1A264D5A1E2E3AB100F28F4A /* WeChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A264D591E2E3AB100F28F4A /* WeChatVC.m */; };
 		B4ED97E776C823EE9C3AFF58 /* libPods-Instance messaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */; };
 		CF5FA4C41E2DBE72001E11F2 /* ChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5FA4C31E2DBE72001E11F2 /* ChatVC.m */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		1A264D501E2DBAC300F28F4A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1A264D521E2DC72200F28F4A /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
 		1A264D531E2DC72200F28F4A /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
+		1A264D581E2E3AB100F28F4A /* WeChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatVC.h; sourceTree = "<group>"; };
+		1A264D591E2E3AB100F28F4A /* WeChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatVC.m; sourceTree = "<group>"; };
 		6B50F9000574B9CA6829363E /* Pods-Instance messaging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.debug.xcconfig"; sourceTree = "<group>"; };
 		708E5B9079A3EC15A057ABAF /* libPods-Instance messaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Instance messaging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69B0FB6968D7FD0527C2A78 /* Pods-Instance messaging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instance messaging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instance messaging/Pods-Instance messaging.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				1A264D411E2DAB4F00F28F4A /* MineViewController.m */,
 				CF5FA4C21E2DBE72001E11F2 /* ChatVC.h */,
 				CF5FA4C31E2DBE72001E11F2 /* ChatVC.m */,
+				1A264D581E2E3AB100F28F4A /* WeChatVC.h */,
+				1A264D591E2E3AB100F28F4A /* WeChatVC.m */,
 			);
 			name = "功能";
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				1A264D541E2DC72200F28F4A /* NetRequest.m in Sources */,
 				1A264D121E2DA58900F28F4A /* AppDelegate.m in Sources */,
 				1A264D0F1E2DA58900F28F4A /* main.m in Sources */,
+				1A264D5A1E2E3AB100F28F4A /* WeChatVC.m in Sources */,
 				1A264D3F1E2DAB3A00F28F4A /* FriendsViewController.m in Sources */,
 				CF5FA4C41E2DBE72001E11F2 /* ChatVC.m in Sources */,
 				1A264D371E2DA80C00F28F4A /* RootViewController.m in Sources */,

@@ -20,6 +20,15 @@
     self = [super init];
     if (self) {
         //设置会话类型
+        [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),    /*单聊*/
+                                            @(ConversationType_DISCUSSION),                  /*讨论组*/
+                                            @(ConversationType_CHATROOM),                   /*聊天室*/
+                                            @(ConversationType_GROUP),                          /*群组*/
+                                            @(ConversationType_APPSERVICE),                 /*公众号*/
+                                            @(ConversationType_SYSTEM)]];                      /*系统会话*/
+        //会话类型聚合 私聊
+        //[self setCollectionConversationType:@[@(ConversationType_PRIVATE)]];
+
         [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
                                             @(ConversationType_DISCUSSION),
                                             @(ConversationType_CHATROOM),
@@ -28,6 +37,7 @@
                                             @(ConversationType_SYSTEM)]];
         //会话类型聚合 私聊 讨论组
         [self setCollectionConversationType:@[@(ConversationType_PRIVATE), @(ConversationType_DISCUSSION)]];
+
     }
     return self;
 }
@@ -42,9 +52,7 @@
         RCConversationCell *conCell = (RCConversationCell *)cell;
         conCell.conversationTitle.textColor = [UIColor blueColor];
     }
-    
-    
-    
+
 }
 
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
